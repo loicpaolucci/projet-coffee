@@ -1,9 +1,72 @@
+:root {
+    --light: #D6F599;
+    --yellow: #D2FF28;
+    --orange: #C84C09;
+    --green: #436436;
+    --violet: #420217;
+    --darker-green: #35502B;
+}
+
 * {
-    background-image: url(./Images/café.png);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(./assets/Images/café.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     padding: 0;
     margin: 0;
-    
+}
+
+.bg-light {
+    background-color: var(--light);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.bg-orange {
+    background-color: var(--orange);
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.bg-violet {
+    background-color: var(--violet);
+}
+
+.text-light {
+    color: var(--light);
+}
+
+.text-yellow {
+    color: var(--yellow);
+}
+
+.text-orange {
+    color: var(--orange);
+}
+
+.text-green {
+    color: var(--green);
+}
+
+.text-violet {
+    color: var(--violet);
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 3px;
+    transition: ease-in-out 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--darker-green);
 }
