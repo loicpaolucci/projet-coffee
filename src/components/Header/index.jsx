@@ -1,5 +1,4 @@
 import React from "react";
-import { Logout } from "../../apiCalls/LogoutCall";
 
 const Header = () => {
     return (
