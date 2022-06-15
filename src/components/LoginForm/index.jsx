@@ -1,10 +1,23 @@
 import React from 'react'
+import { Login } from '../../apiCalls/LoginCall'
 import "../../assets/styles/forms.scss"
 
-const LoginForm = () => {    
+const LoginForm = () => {
+
+    const login = () => {
+        const formData = new FormData(document.getElementById('form'))
+        const datas = {
+            user: {
+                email: Array.from(formData)[0][1],
+                password: Array.from(formData)[1][1]
+            }
+        }
+        Login(datas)
+    }
+
     return (
         <div className="crud-container">
-            <form className="form-container">
+            <form className="form-container" id="form" onSubmit={event => {event.preventDefault(); login()}}>
                 <h1 className='form-title'>Connectez-vous</h1>
                 <label className='text-green'>Email</label>
                 <input type="email" id="email" name="email" className="form-input green-focus" />
