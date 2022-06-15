@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { Register } from '../../apiCalls/RegisterCall'
 import "../../assets/styles/forms.scss"
 
 const RegisterForm = () => {
@@ -24,7 +25,6 @@ const RegisterForm = () => {
     }
 
     const register = () => {
-        console.log("hello")
         const formData = new FormData(document.getElementById('form'))
         const datas = {
             user: {
@@ -32,32 +32,13 @@ const RegisterForm = () => {
                 password: Array.from(formData)[1][1]
             }
         }
-    
-        fetch("https://mycoffees.herokuapp.com/users", {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(datas),
-        }).then((response) => {
-            AppStore.dispatch({
-                type: 'EDIT_TOKEN',
-                newToken: [...response.headers.get("authorization")].join('')
-            })
-            return (response.json())
-        }).then((response) => {
-            AppStore.dispatch({
-                type: "EDIT_USER",
-                newUser: response.user
-            })
-            console.log(AppStore.getState.state.user)
-        })
+        Register(datas)
     }
 
     return (
         <div className="crud-container">
             <form className="form-container" id="form" onSubmit={event => {event.preventDefault(); if (checkMatch(password, password2)) {register()}}}>
-                <h1 className='form-title'>Inscrivez-vous {AppStore.getState().state.user.email}</h1>
+                <h1 className='form-title'>Inscrivez-vous</h1>
                 <label className='text-green'>Email</label>
                 <input type="email" id="email" name="email" className="form-input green-focus" />
                 <label className='text-green'>Mot de passe</label>
