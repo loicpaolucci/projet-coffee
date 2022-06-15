@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { Register } from '../../apiCalls/RegisterCall'
 import "../../assets/styles/forms.scss"
 
 const RegisterForm = () => {
