@@ -1,9 +1,4 @@
-import { userStore } from "../../stores/userStore"
-import { useAtom } from "jotai"
-
 export const Register = (email, password) => {
-
-    const userAtom = useAtom(userStore)
 
     const datas = {
         user: {
@@ -21,9 +16,6 @@ export const Register = (email, password) => {
     }).then((response) => {
         return (response.json())
     }).then((response) => {
-        userAtom({
-            name: response.name,
-            email: response.email
-        })
+        console.log(response)
     })
 }

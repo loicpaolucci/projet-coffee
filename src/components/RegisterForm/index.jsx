@@ -1,12 +1,9 @@
+import React from 'react'
 import { useState } from 'react'
-import { Register } from '../../apiCalls/RegisterCall'
-import { userStore } from '../../stores/userStore'
-import { useAtomValue } from 'jotai'
 import "../../assets/styles/forms.scss"
 
 const RegisterForm = () => {
 
-    const {name, email} = useAtomValue(userStore)
     const [password, setPassword] = useState("")
     const [password2, setPassword2] = useState("")
 
@@ -26,15 +23,41 @@ const RegisterForm = () => {
         }
     }
 
-    const login = () => {
+    const register = () => {
+        console.log("hello")
         const formData = new FormData(document.getElementById('form'))
-        Register(Array.from(formData)[0][1], Array.from(formData)[1][1])
+        const datas = {
+            user: {
+                email: Array.from(formData)[0][1],
+                password: Array.from(formData)[1][1]
+            }
+        }
+    
+        fetch("https://mycoffees.herokuapp.com/users", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(datas),
+        }).then((response) => {
+            AppStore.dispatch({
+                type: 'EDIT_TOKEN',
+                newToken: [...response.headers.get("authorization")].join('')
+            })
+            return (response.json())
+        }).then((response) => {
+            AppStore.dispatch({
+                type: "EDIT_USER",
+                newUser: response.user
+            })
+            console.log(AppStore.getState.state.user)
+        })
     }
 
     return (
         <div className="crud-container">
-            <form className="form-container" id="form" onSubmit={event => {event.preventDefault(); if (checkMatch(password, password2)) {login()}}}>
-                <h1 className='form-title'>Inscrivez-vous {name} {email}</h1>
+            <form className="form-container" id="form" onSubmit={event => {event.preventDefault(); if (checkMatch(password, password2)) {register()}}}>
+                <h1 className='form-title'>Inscrivez-vous {AppStore.getState().state.user.email}</h1>
                 <label className='text-green'>Email</label>
                 <input type="email" id="email" name="email" className="form-input green-focus" />
                 <label className='text-green'>Mot de passe</label>
