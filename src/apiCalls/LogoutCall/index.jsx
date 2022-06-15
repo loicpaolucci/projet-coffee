@@ -1,22 +1,22 @@
-import AppStore from '../../stores/Redux/AppStore'
-import { useSelector } from "react-redux";
 import Cookies from 'js-cookie'
 
-export const Logout = (datas) => {
+export const Logout = () => {
 
-    console.log("LogOut")
-
-    let token = useSelector(state => state.token)
-    token = token ? token : AppStore.getState().state.token
+    console.log("LogOut", Cookies.get('token'))
 
     fetch("https://mycoffees.herokuapp.com/users/sign_out", {
-        method: "post",
+        method: "delete",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": token
-        },
-        body: JSON.stringify(datas),
+            "Authorization": Cookies.get('token')
+        }
+    }).then((answer) => {console.log(answer.json())})
+    Cookies.remove('token', {
+        sameSite: "None",
+        secure: true
     })
-    Cookies.remove('jwt-token')
-    Cookies.remove('user')
+    Cookies.remove('user', {
+        sameSite: "None",
+        secure: true
+    })
 }

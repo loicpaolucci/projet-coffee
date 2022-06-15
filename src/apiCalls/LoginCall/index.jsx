@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 
 export const Login = (datas) => {
 
-    console.log("Login")
+    console.log("Login", datas)
 
     fetch("https://mycoffees.herokuapp.com/users/sign_in", {
         method: "post",
@@ -12,11 +12,12 @@ export const Login = (datas) => {
         },
         body: JSON.stringify(datas),
     }).then((response) => {
+        console.log([...response.headers.get("authorization")].join(''))
         AppStore.dispatch({
             type: 'EDIT_TOKEN',
             newToken: [...response.headers.get("authorization")].join('')
         })
-        Cookies.set('jwt-token', [...response.headers.get("authorization")].join(''), {
+        Cookies.set('token', [...response.headers.get("authorization")].join(''), {
             sameSite: "None",
             secure: true
         })
@@ -30,5 +31,6 @@ export const Login = (datas) => {
             sameSite: "None",
             secure: true
         })
+        console.log(response)
     })
 }

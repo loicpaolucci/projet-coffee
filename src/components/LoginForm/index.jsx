@@ -6,7 +6,13 @@ const LoginForm = () => {
 
     const login = () => {
         const formData = new FormData(document.getElementById('form'))
-        Login(Array.from(formData)[0][1], Array.from(formData)[1][1])
+        const datas = {
+            user: {
+                email: Array.from(formData)[0][1],
+                password: Array.from(formData)[1][1]
+            }
+        }
+        Login(datas)
     }
 
     return (

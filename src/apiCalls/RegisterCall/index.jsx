@@ -16,7 +16,7 @@ export const Register = (datas) => {
             type: 'EDIT_TOKEN',
             newToken: [...response.headers.get("authorization")].join('')
         })
-        Cookies.set('jwt-token', [...response.headers.get("authorization")].join(''), {
+        Cookies.set('token', [...response.headers.get("authorization")].join(''), {
             sameSite: "None",
             secure: true
         })
