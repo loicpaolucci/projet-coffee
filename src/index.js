@@ -1,24 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/index.css';
 import App from './App';
 import { BrowserRouter , Routes , Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import './Navbar/style.css';
+import Home from './pages/Home'
+import Login from './pages/Login';
+import Signin from './pages/Signin';
+import Products from './Product';
+import Arabica from './Product/arabica';
+import Robusta from './Product/robusta';
+import Autres from './Product/autre';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <React.StrictMode>
+ 
     <BrowserRouter>
+    <Navbar />
     <Routes> 
-      <Route> 
-    <App />
-    </Route>
+    <Route path="/home" element={<Home />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/signin" element={<Signin />} /> 
+    <Route path="/product" element={<Products/>} /> 
+    <Route path="/product/arabica" element={<Arabica/>} />  
+    <Route path="/product/robusta" element={<Robusta/>} /> 
+    <Route path="/product/autre" element={<Autres/>} /> 
     </Routes>
+    <App />
     </BrowserRouter>
-  </React.StrictMode>
+  
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
