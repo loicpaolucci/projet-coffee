@@ -1,20 +1,34 @@
-export const Login = (mail, password) => {
-    /* const datas = {
-        user: {
-            email,
-            password
-        }
-    }
+import AppStore from '../../stores/Redux/AppStore'
+import Cookies from 'js-cookie'
 
-    fetch("https://mycoffees.herokuapp.com/users", {
+export const Login = (datas) => {
+
+    console.log("Login")
+
+    fetch("https://mycoffees.herokuapp.com/users/sign_in", {
         method: "post",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(datas),
     }).then((response) => {
+        AppStore.dispatch({
+            type: 'EDIT_TOKEN',
+            newToken: [...response.headers.get("authorization")].join('')
+        })
+        Cookies.set('jwt-token', [...response.headers.get("authorization")].join(''), {
+            sameSite: "None",
+            secure: true
+        })
         return (response.json())
     }).then((response) => {
-        console.log(response)
-    }) */
+        AppStore.dispatch({
+            type: "EDIT_USER",
+            newUser: response.user
+        })
+        Cookies.set('user', JSON.stringify(response.user), {
+            sameSite: "None",
+            secure: true
+        })
+    })
 }

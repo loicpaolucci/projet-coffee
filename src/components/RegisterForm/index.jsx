@@ -26,13 +26,10 @@ const RegisterForm = () => {
 
     const register = () => {
         const formData = new FormData(document.getElementById('form'))
-        const datas = {
-            user: {
-                email: Array.from(formData)[0][1],
-                password: Array.from(formData)[1][1]
-            }
-        }
-        Register(datas)
+        Register({user: {
+            email: Array.from(formData)[0][1],
+            password: Array.from(formData)[1][1]
+        }})
     }
 
     return (
