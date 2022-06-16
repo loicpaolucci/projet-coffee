@@ -1,22 +1,27 @@
 import Cookies from 'js-cookie'
+import AppStore from 'stores/Redux/AppStore'
 
 export const Logout = () => {
 
-    console.log("LogOut", Cookies.get('token'))
+    console.log("LogOut", Cookies.get('jwt-token'))
 
     fetch("https://mycoffees.herokuapp.com/users/sign_out", {
         method: "delete",
         headers: {
+            "Authorization": Cookies.get('jwt-token'),
             "Content-Type": "application/json",
-            "Authorization": Cookies.get('token')
-        }
+                }
     }).then((answer) => {console.log(answer)})
-    Cookies.remove('token', {
-        sameSite: "None",
+    Cookies.remove('jwt-token', {
+        sameSite: "none",
         secure: true
     })
     Cookies.remove('user', {
-        sameSite: "None",
+        sameSite: "none",
         secure: true
     })
+    AppStore.dispatch({
+        type: 'DESTROY'
+    })
+
 }
