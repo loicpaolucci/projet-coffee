@@ -1,6 +1,7 @@
 import React from 'react'
 import { Login } from '../../apiCalls/LoginCall'
 import "../../assets/styles/forms.scss"
+import Footer from "../Footer";
 
 const LoginForm = () => {
 
@@ -25,6 +26,7 @@ const LoginForm = () => {
                 <input type="password" id="password" name="password" className="form-input green-focus" />
                 <input type="submit" value="Se Connecter" className="btn bg-green text-light no-border"/>
             </form>
+            <Footer />
         </div>
     )
 }
