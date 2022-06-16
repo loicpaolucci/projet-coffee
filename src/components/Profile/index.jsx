@@ -5,10 +5,8 @@ import './profile.scss'
 
 const Profile = () => {
 
-    let jwt = useSelector((state) => state.token);
     let infoUser = useSelector((state) => state.user);
     infoUser = infoUser ? infoUser : AppStore.getState().state.user;
-    jwt = jwt ? jwt : AppStore.getState().state.token;
  
     
     return (

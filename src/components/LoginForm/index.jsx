@@ -2,8 +2,11 @@ import React from 'react'
 import { Login } from '../../apiCalls/LoginCall'
 import "../../assets/styles/forms.scss"
 import Footer from "../Footer";
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+
+    const navigate = useNavigate()
 
     const login = () => {
         const formData = new FormData(document.getElementById('form'))
@@ -14,6 +17,7 @@ const LoginForm = () => {
             }
         }
         Login(datas)
+        navigate('/index-cofee')
     }
 
     return (
