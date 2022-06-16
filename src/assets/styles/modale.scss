@@ -1,0 +1,52 @@
+$light: #D6F599;
+$yellow: #D2FF28;
+$orange: #C84C09;
+$green: #436436;
+$violet: #420217;
+
+.modale-buy {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modale-body {
+    background-color: #436436dd;
+    color: $light;
+    border-radius: 3px;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.modale-body h2 {
+    margin-top: 20px;
+}
+
+.buy-input {
+    width: 40%;
+    margin: 0 30% 0 30%;
+}
+
+.buy-input:focus {
+    outline-color: $orange !important;
+}
+
+.close-btn {
+    background-color: #420217;
+    margin: 0 60px 10px 60px;
+}
+
+.close-btn:hover {
+    background-color: #420217e2;
+}

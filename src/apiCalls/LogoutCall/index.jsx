@@ -10,7 +10,7 @@ export const Logout = () => {
             "Content-Type": "application/json",
             "Authorization": Cookies.get('token')
         }
-    }).then((answer) => {console.log(answer.json())})
+    }).then((answer) => {console.log(answer)})
     Cookies.remove('token', {
         sameSite: "None",
         secure: true
