@@ -7,13 +7,14 @@
 
 .title{
 
-    color: rgb(177, 86, 21);
+    color: rgb(252, 188, 13);
+    font-size: 40px;
 
 }
 
 .cafe{
     cursor: pointer;
-    color: chocolate;
+    color: rgb(243, 107, 10);
     font-size: 30px;
     
 }
@@ -24,4 +25,9 @@
     border: none;
     color: chocolate;
 
+}
+
+p{
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

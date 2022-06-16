@@ -10,12 +10,13 @@ const Arabica = () => {
         <section className='container2'>
             <div className='card'>
                 <div className='card-image car-1'></div>
-                <h2>café arabica</h2>
-                <p>lorem</p>
+                <h2>Café Arabica : </h2>
+                <br></br>
+                <p>Café doux et subtil</p>
             </div>
         </section>
 
-        <p className='p'><Link to='/product' className='p'>👈retour</Link></p>
+        <p className='p'><Link to='/product' className='p'>👈RETOUR</Link></p>
         </div>
        
     )}
