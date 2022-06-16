@@ -1,0 +1,49 @@
+
+.container3{
+    display: flex;
+    justify-content: center;
+}
+
+.card-c{
+    background: linear-gradient(45deg , rgb(116, 68, 24), rgb(224, 124, 9));
+    width: 230px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.card-image{
+    background-color: cornsilk;
+    height: 150px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.car-4{
+    background-image: url(https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/74/c8/0d/74c80d5c-607d-4509-ee75-cdfbd996be42/source/256x256bb.jpg);
+}
+.car-5{
+    background-image: url(https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/74/c8/0d/74c80d5c-607d-4509-ee75-cdfbd996be42/source/256x256bb.jpg);
+}
+.car-6{
+    background-image: url(https://is1-ssl.mzstatic.com/image/thumb/Purple62/v4/74/c8/0d/74c80d5c-607d-4509-ee75-cdfbd996be42/source/256x256bb.jpg);
+}
+
+p{
+    color: white;
+}
+
+h2{
+    color: wheat;
+}
+
+h1{
+    text-align: center;
+    color: wheat;
+}
+
+.but{
+    text-align: center;
+    margin-top: 20px;
+}

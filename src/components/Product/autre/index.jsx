@@ -13,11 +13,12 @@ const Autres = () => {
             <div className='card'>
                 <div className='card-image car-1'></div>
                 <h2>Autre café</h2>
-                <p>lorem</p>
+                <br></br>
+                <p>Un melange de graine d'Arabica et Robusta</p>
             </div>
         </section>
 
-        <p className='p'><Link to='/product' className='p'>👈retour</Link></p>
+        <p className='p'><Link to='/product' className='p'>👈RETOUR</Link></p>
         </> 
 )}
 
