@@ -1,0 +1,68 @@
+$light: #D6F599;
+$yellow: #D2FF28;
+$orange: #C84C09;
+$green: #436436;
+$violet: #420217;
+
+.crud-container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 30vw;
+    height: fit-content;
+    border-radius: 3px;
+    background-color: #d6f599a9;
+    padding: 30px;
+}
+
+.form-container-cofee {
+    width: 60vw;
+    height: fit-content;
+    border-radius: 3px;
+    background-color: #d6f599a9;
+    padding: 30px;
+}
+
+.halfs-wrapper {
+    display: flex;
+}
+
+.form-half {
+    padding: 0 10px;
+}
+
+.form-input {
+    margin-bottom: 20px;
+    border: none;
+    width: 96%;
+    padding: 10px 2%;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+
+.form-input:focus {
+    outline: $green 2px solid;
+}
+
+.no-border {
+    border: none;
+}
+
+.form-title {
+    margin-bottom: 10px;
+    color: $green;
+}
+
+.text-warning {
+    color: red;
+    margin-bottom: 10px;
+}
+
+#passwordConfirm {
+    margin-bottom: 0;
+}
