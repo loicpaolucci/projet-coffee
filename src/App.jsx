@@ -14,6 +14,8 @@ import Arabica from './components/Product/arabica';
 import Robusta from './components/Product/robusta';
 import Autres from './components/Product/autre';
 import Contact from './components/Contact';
+import Profile from './components/Profile';
+
 
 const App = () => {
   return (
@@ -34,6 +36,7 @@ const App = () => {
             <Route path="/product/robusta" element={<Robusta/>} /> 
             <Route path="/product/autre" element={<Autres/>} /> 
             <Route path="/contact" element={<Contact/>} /> 
+            <Route path="/profile" element={< Profile  />} />
           </Routes>
         </BrowserRouter>
       </Provider>
