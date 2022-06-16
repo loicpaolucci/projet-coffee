@@ -3,12 +3,13 @@ import { useState } from 'react'
 import { Register } from '../../apiCalls/RegisterCall'
 import "../../assets/styles/forms.scss"
 import Footer from "../Footer";
-
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
 
     const [password, setPassword] = useState("")
     const [password2, setPassword2] = useState("")
+    const naviguate = useNavigate()
 
     const updatePassword = (password, action) => {
         action(password)
@@ -32,6 +33,7 @@ const RegisterForm = () => {
             email: Array.from(formData)[0][1],
             password: Array.from(formData)[1][1]
         }})
+        naviguate('/index-cofee')
     }
 
     return (
