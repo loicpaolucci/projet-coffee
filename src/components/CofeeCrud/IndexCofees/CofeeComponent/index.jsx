@@ -15,7 +15,7 @@ const CofeeComponent = ({ product }) => {
     return (
         <div className="product-card">
             <h3>{product.name}</h3>
-            <p>{product.counrty}</p>
+            <h4>{product.country}</h4>
             <ul>
                 <li>{product.intensity}</li>
                 <li>{product.stock}</li>
@@ -28,7 +28,7 @@ const CofeeComponent = ({ product }) => {
                 <button className="btn buy-cofee" onClick={startBuy}>Buy Cofee</button>
                 <img src={LogoWithName} alt="Logo LeBonCafé" />
             </div>
-            {toggleModale ? <ModaleBuy price={product.price} name={product.name} stock={product.stock}/> : <></>}
+            {toggleModale ? <ModaleBuy price={product.price} name={product.name} closeModal={startBuy} stock={product.stock}/> : <></>}
         </div>
     )
 }
