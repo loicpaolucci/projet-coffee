@@ -22,13 +22,13 @@ const CofeeComponent = ({ product }) => {
                 <li>${product.price}</li>
             </ul>
             <div className="product-description">
-                <p>{product.description}</p>
+                <h5>{product.description}</h5>
             </div>
             <div className="buy-action-div">
                 <button className="btn buy-cofee" onClick={startBuy}>Buy Cofee</button>
                 <img src={LogoWithName} alt="Logo LeBonCafé" />
             </div>
-            {toggleModale ? <ModaleBuy price={product.price} name={product.name} closeModal={startBuy} stock={product.stock}/> : <></>}
+            {toggleModale ? <ModaleBuy price={product.price} name={product.name} id={product.id} closeModal={startBuy} stock={product.stock}/> : <></>}
         </div>
     )
 }

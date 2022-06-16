@@ -27,6 +27,8 @@ const Navbar = () => {
         <>
         <Link to="/profile" className="items">Mon profil</Link>
         <Link to="/home" onClick={logout} className="items">Se déconnecter</Link>
+        <Link to="/sell-cofee" className="items">Vendre</Link>
+        <Link to="/index-cofee" className="items">Voir les cafés</Link>
         </>
         }
             </ul>
