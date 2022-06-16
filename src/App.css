@@ -63,8 +63,9 @@ body {
 
 .btn {
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 3px !important;
     transition: ease-in-out 0.2s;
+    color: var(--light) !important;
 }
 
 .btn:hover {

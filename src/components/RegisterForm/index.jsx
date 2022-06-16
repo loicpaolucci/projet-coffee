@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { Register } from '../../apiCalls/RegisterCall'
 import "../../assets/styles/forms.scss"
+import Footer from "../Footer";
+
 
 const RegisterForm = () => {
 
@@ -45,6 +47,7 @@ const RegisterForm = () => {
                 <p className='text-warning' id="passwordWarning"></p>
                 <input type="submit" value="S'inscrire" className="btn bg-green text-light no-border"/>
             </form>
+            <Footer />
         </div>
     )
 }
