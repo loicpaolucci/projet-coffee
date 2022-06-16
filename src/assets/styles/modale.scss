@@ -1,9 +1,14 @@
+$light: #D6F599;
+$yellow: #D2FF28;
+$orange: #C84C09;
+$green: #436436;
+$violet: #420217;
+
 .modale-buy {
     position: fixed;
     top: 0;
-    bottom: 0;
+    left: 0;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.623);
     color: white;
     display: flex;
     justify-content: center;
@@ -11,4 +16,16 @@
     text-align: center;
     height: 100vh;
     width: 100vw;
+}
+
+.modale-body {
+    background-color: #436436dd;
+    color: $light;
+    border-radius: 3px;
+    width: 50vw;
+    height: 50vh;
+}
+
+.buy-input:focus {
+    outline-color: $orange !important;
 }
