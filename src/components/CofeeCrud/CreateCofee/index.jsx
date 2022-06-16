@@ -1,10 +1,32 @@
 import React from "react";
+import { AddProduct } from "apiCalls/AddProduct";
 import '../../../assets/styles/forms.scss'
+import AppStore from "stores/Redux/AppStore";
 
 const CreateCofee = () => {
+
+    const create = () => {
+        const form = document.getElementById('myForm')
+        const formData = Array.from(new FormData(form))
+        console.log(formData)
+        const datas = {
+            product: {
+                name: formData[0][1],
+                price: formData[1][1],
+                country: formData[4][1],
+                description: formData[5][1],
+                intensity: formData[3][1],
+                stock: formData[2][1],
+                user_id: AppStore.getState().state.user.id
+            }
+        }
+        AddProduct(datas, AppStore)
+    }
+
+
     return (
         <div className="crud-container">
-            <form className="form-container-cofee">
+            <form className="form-container-cofee" id="myForm" onSubmit={event => {event.preventDefault(); create()}}>
                 <h1 className='form-title'>Mettez votre produit en ligne</h1>
                 <div className="halfs-wrapper">
                     <div className="form-half">
