@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import CofeeComponent from "./CofeeComponent";
 
 const IndexCofees = () => {
 
@@ -9,11 +10,13 @@ const IndexCofees = () => {
 
     const prepList = (list) => {
         setList(JSON.stringify(list))
-        setShow(cofeeList)
+        setShow(JSON.stringify(list))
     }
 
     const filter = (value) => {
-        setShow(JSON.stringify(JSON.parse(cofeeList).filter(elem => (elem.name.includes(value)))))
+        setShow(JSON.stringify(JSON.parse(cofeeList).filter(elem => (
+            elem.name.toUpperCase().includes(value.toUpperCase()) || elem.country.toUpperCase().includes(value.toUpperCase())
+            ))))
     }
 
     useEffect(() => {
@@ -23,19 +26,17 @@ const IndexCofees = () => {
                 "Content-Type": "application/json",
             }
         }).then((response) => { return (response.json()) })
-            .then((response) => {prepList(response)
-            console.log(response)
-            console.log(cofeeList)})
+            .then((response) => {prepList(response)})
     }, []);
 
     return (
         <>
-            <form class="search-form" id="search-form">
+            <form className="search-form" id="search-form">
                 <input type="text" id="search-bar" name="search-bar" onChange={event => {filter(event.target.value)}}></input>
             </form>
-            <div>
-                {showList.length > 1 ? JSON.parse(cofeeList).map(elem => (
-                    <p>{elem.name}</p>
+            <div className="cofee-list">
+                {showList.length > 1 ? JSON.parse(showList).map(product => (
+                    <CofeeComponent key={product.id} product={product}/>
                 )) : <></>}
             </div>
         </>

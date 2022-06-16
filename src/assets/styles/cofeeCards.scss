@@ -1,0 +1,60 @@
+$light: #D6F599;
+$yellow: #D2FF28;
+$orange: #C84C09;
+$green: #436436;
+$violet: #420217;
+
+body {
+    background-image: none;
+    background-color: $green;
+}
+
+.cofee-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.product-card {
+    background-color: $orange;
+    border-radius: 3px;
+    padding: 10px;
+    height: fit-content;
+    width: calc(33% - 60px);
+    margin: 20px;
+    border: 1px solid $light;
+    color: $light;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+}
+
+.product-card ul {
+    padding-left: 20px;
+}
+
+.product-description {
+    margin: 5px 0 10px 0;
+    border: 1px solid $light;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.buy-cofee {
+    border: 1px solid $light;
+    background-color: $green;
+    color: $light;
+    height: 100% !important;
+}
+
+.buy-action-div {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+}
+
+.buy-action-div img {
+    height: 100%;
+}
