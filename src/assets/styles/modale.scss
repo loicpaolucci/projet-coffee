@@ -1,4 +1,4 @@
-$light: #D6F599;
+$light: whitesmoke;
 $yellow: #D2FF28;
 $orange: #C84C09;
 $green: #436436;
@@ -16,6 +16,7 @@ $violet: #420217;
     text-align: center;
     height: 100vh;
     width: 100vw;
+    animation: openModal 0.5s ease-in-out;
 }
 
 .modale-body {
@@ -49,4 +50,8 @@ $violet: #420217;
 
 .close-btn:hover {
     background-color: #420217e2;
+}
+
+@keyframes openModal {
+    0% {transform: (scale(0.5));}
 }

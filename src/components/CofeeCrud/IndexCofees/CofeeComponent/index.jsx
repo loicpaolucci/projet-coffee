@@ -22,7 +22,7 @@ const CofeeComponent = ({ product }) => {
                 <li>${product.price}</li>
             </ul>
             <div className="product-description">
-                <p>{product.description}</p>
+                <h5>{product.description}</h5>
             </div>
             <div className="buy-action-div">
                 <button className="btn buy-cofee" onClick={startBuy}>Buy Cofee</button>
