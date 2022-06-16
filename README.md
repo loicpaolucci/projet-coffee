@@ -11,7 +11,7 @@ Le site que nous allons mettre en place va servir a des utlilisateurs , pour pou
 
 Techniquement l'utilisateur va pouvoir s'inscrire et se connecter pour acceder à son profil , il va pouvoir acheter du cafe et si il le souhaite revendre son cafe .
 
-Technologie utilisée :
+
 
 
 

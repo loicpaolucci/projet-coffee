@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
+import { Register } from '../../apiCalls/RegisterCall'
 import "../../assets/styles/forms.scss"
+import Footer from "../Footer";
+
 
 const RegisterForm = () => {
 
@@ -23,13 +26,17 @@ const RegisterForm = () => {
         }
     }
 
-    const login = () => {
-        console.log(password, password2)
+    const register = () => {
+        const formData = new FormData(document.getElementById('form'))
+        Register({user: {
+            email: Array.from(formData)[0][1],
+            password: Array.from(formData)[1][1]
+        }})
     }
 
     return (
         <div className="crud-container">
-            <form className="form-container" onSubmit={event => {event.preventDefault(); if (checkMatch(password, password2)) {login()}}}>
+            <form className="form-container" id="form" onSubmit={event => {event.preventDefault(); if (checkMatch(password, password2)) {register()}}}>
                 <h1 className='form-title'>Inscrivez-vous</h1>
                 <label className='text-green'>Email</label>
                 <input type="email" id="email" name="email" className="form-input green-focus" />
@@ -40,6 +47,7 @@ const RegisterForm = () => {
                 <p className='text-warning' id="passwordWarning"></p>
                 <input type="submit" value="S'inscrire" className="btn bg-green text-light no-border"/>
             </form>
+            <Footer />
         </div>
     )
 }
