@@ -1,6 +1,7 @@
 import AppStore from '../../stores/Redux/AppStore'
 import Cookies from 'js-cookie'
 
+
 export const Login = (datas) => {
 
     console.log("Login", datas)
@@ -17,7 +18,7 @@ export const Login = (datas) => {
             type: 'EDIT_TOKEN',
             newToken: [...response.headers.get("authorization")].join('')
         })
-        Cookies.set('token', [...response.headers.get("authorization")].join(''), {
+        Cookies.set('jwt-token', [...response.headers.get("authorization")].join(''), {
             sameSite: "None",
             secure: true
         })
@@ -32,5 +33,6 @@ export const Login = (datas) => {
             secure: true
         })
         console.log(response)
+    
     })
 }

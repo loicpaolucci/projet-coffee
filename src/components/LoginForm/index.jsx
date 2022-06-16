@@ -2,6 +2,7 @@ import React from 'react'
 import { Login } from '../../apiCalls/LoginCall'
 import "../../assets/styles/forms.scss"
 
+
 const LoginForm = () => {
 
     const login = () => {

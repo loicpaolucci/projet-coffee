@@ -1,0 +1,17 @@
+
+.profile-ctn {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.information {
+    text-align: center;
+    width: 80vw;
+    height: fit-content;
+    border-radius: 3px;
+    background-color: #d6f599a9;
+    padding: 30px;
+} 
