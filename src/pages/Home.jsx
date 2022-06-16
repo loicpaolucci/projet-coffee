@@ -5,8 +5,8 @@ import Footer from "../components/Footer";
 const Home = () => {
     return(
         <>
-        <h1>HOME</h1>
-        <Link to="/product" className="prod">Produits</Link>
+        <h1>Bienvenu sur </h1><h1 className="cof">Coffee-Shop.com</h1>
+        <p className="prod"><Link to="/product" className="prod">Produits</Link></p>
 
         <Footer />
         </>

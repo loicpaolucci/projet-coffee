@@ -5,14 +5,15 @@ const Robusta = () => {
     return(
 
         <>
-        <h1>cafe Robusta</h1>
+        <h1>Café Robusta</h1>
 
 
         <section className='container2'>
             <div className='card'>
                 <div className='card-image car-1'></div>
-                <h2>café robusta</h2>
-                <p>lorem</p>
+                <h2>Café Robusta</h2>
+                <br></br>
+                <p>Café fort avec des notes fruités</p>
             </div>
         </section>
 
@@ -20,7 +21,7 @@ const Robusta = () => {
 
 
 
-            <p className='p'><Link to='/product' className='p'> 👈retour</Link></p>
+            <p className='p'><Link to='/product' className='p'> 👈RETOUR</Link></p>
         </>
  )};
 
